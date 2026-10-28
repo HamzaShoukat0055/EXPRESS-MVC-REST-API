@@ -1,0 +1,50 @@
+### ========================================================
+### NAME: HAMZA SHOUKAT | ROLL NO: SU92-BCSFM-F26-027
+### EXPRESS.JS MODULAR MVC REST API - ALL 5 MANDATORY CASES
+### ========================================================
+
+### Case 1A: POST /api/auth/register (201 Created)
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Hamza Shoukat",
+  "username": "hamza_shoukat",
+  "rollNo": "SU92-BCSFM-F26-027",
+  "password": "password123"
+}
+
+### Case 1B: POST /api/auth/login (200 OK)
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "hamza_shoukat",
+  "password": "password123"
+}
+
+### Case 2: POST /api/categories (201 Created)
+POST http://localhost:5000/api/categories
+Content-Type: application/json
+
+{
+  "name": "Database Systems",
+  "description": "Relational databases, SQL queries, and schema design."
+}
+
+### Case 3: GET /api/categories (200 OK)
+GET http://localhost:5000/api/categories
+
+### Case 4: Validation Error - Missing Required Field (400 Bad Request)
+POST http://localhost:5000/api/categories
+Content-Type: application/json
+
+{
+  "name": ""
+}
+
+### Case 5A: Invalid Category ID (404 Not Found)
+GET http://localhost:5000/api/categories/999
+
+### Case 5B: Unknown Route URL (404 Route Not Found)
+GET http://localhost:5000/api/unknown-url
